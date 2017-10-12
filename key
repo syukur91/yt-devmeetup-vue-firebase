@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDTPnWFrygU7x5W_BVXL8jMLdi-1bzo6ic",
+    authDomain: "devmeetup-516bc.firebaseapp.com",
+    databaseURL: "https://devmeetup-516bc.firebaseio.com",
+    projectId: "devmeetup-516bc",
+    storageBucket: "devmeetup-516bc.appspot.com",
+    messagingSenderId: "698796597398"
+  };
+  firebase.initializeApp(config);
+</script>

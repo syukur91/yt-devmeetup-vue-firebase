@@ -26,7 +26,7 @@
         @click.stop="sideNav = !sideNav"
         class="hidden-sm-and-up "></v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">DevMeetup</router-link>
+        <router-link to="/" tag="span" style="cursor: pointer">Loocads</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
@@ -65,13 +65,16 @@
     computed: {
       menuItems () {
         let menuItems = [
-          {icon: 'face', title: 'Sign up', link: '/signup'},
-          {icon: 'lock_open', title: 'Sign in', link: '/signin'}
+          {icon: '', title: 'About', link: '/about'},
+          // {icon: 'lock_open', title: 'Sign in', link: '/signin'},
+          {icon: '', title: 'Sign up', link: '/signup'},
+          {icon: '', title: 'Services', link: '/about'},
+          {icon: '', title: 'Contact Us', link: '/about'}
         ]
         if (this.userIsAuthenticated) {
           menuItems = [
-            {icon: 'supervisor_account', title: 'View Meetups', link: '/meetups'},
-            {icon: 'room', title: 'Organize Meetup', link: '/meetup/new'},
+            {icon: 'supervisor_account', title: 'Ads List', link: '/meetups'},
+            {icon: 'room', title: 'Campaign', link: '/meetup/new'},
             {icon: 'person', title: 'Profile', link: '/profile'}
           ]
         }
