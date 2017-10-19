@@ -74,7 +74,7 @@
     watch: {
       user (value) {
         if (value !== null && value !== undefined) {
-          this.$router.push('/about')
+          this.$router.push('/')
         }
       }
     },
