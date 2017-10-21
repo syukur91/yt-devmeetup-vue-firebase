@@ -66,7 +66,6 @@ export const store = new Vuex.Store({
               radius: obj[key].radius
             })
           }
-          debugger
           commit('setLoadedMeetups', meetups)
           commit('setLoading', false)
         })
@@ -94,7 +93,6 @@ export const store = new Vuex.Store({
           return key
         })
         .then(key => {
-          debugger
           const filename = payload.image.name
           const ext = filename.slice(filename.lastIndexOf('.'))
           return firebase.storage().ref('loocads/' + key + '.' + ext).put(payload.image)
