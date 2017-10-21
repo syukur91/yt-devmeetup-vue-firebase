@@ -30,6 +30,28 @@
           </v-layout>
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
+              <v-text-field
+                name="quantity"
+                label="Quantity"
+                id="quantity"
+                v-model="quantity"
+                type="number"
+                required></v-text-field>
+            </v-flex>
+          </v-layout>
+            <v-layout row>
+            <v-flex xs12 sm6 offset-sm3>
+              <v-text-field
+                name="radius"
+                label="Radius"
+                id="radius"
+                v-model="radius"
+                type="number"
+                required></v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row>
+            <v-flex xs12 sm6 offset-sm3>
             
               <v-btn raised class="primary" @click="onPickFile">Upload Image</v-btn>
               <input
@@ -46,18 +68,8 @@
               <img :src="imageUrl" height="150">
             </v-flex>
           </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="description"
-                label="Description"
-                id="description"
-                multi-line
-                v-model="description"
-                required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
+          
+         <!-- <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <h4>Choose a Data & Time</h4>
             </v-flex>
@@ -71,8 +83,8 @@
             <v-flex xs12 sm6 offset-sm3>
               <v-time-picker v-model="time" format="24hr"></v-time-picker>
             </v-flex>
-          </v-layout>
-          <v-layout row>
+          </v-layout>-->
+          <v-layout row> 
             <v-flex xs12 sm6 offset-sm3>
               <v-btn
                 class="primary"
@@ -93,10 +105,11 @@
         campaignName: '',
         campaignType: '',
         imageUrl: '',
-        description: '',
-        date: new Date(),
-        time: new Date(),
-        image: null
+        quantity: 0,
+        // date: new Date(),
+        // time: new Date(),
+        image: null,
+        radius: 0
       }
     },
     computed: {
@@ -104,7 +117,8 @@
         return this.campaignName !== '' &&
           this.campaignType !== '' &&
           this.imageUrl !== '' &&
-          this.description !== ''
+          this.quantity !== '' &&
+          this.radius !== ''
       },
       submittableDateTime () {
         const date = new Date(this.date)
@@ -132,8 +146,9 @@
           campaignName: this.campaignName,
           campaignType: this.campaignType,
           image: this.image,
-          description: this.description,
-          date: this.submittableDateTime
+          quantity: this.quantity,
+          // date: this.submittableDateTime,
+          radius: this.radius
         }
         this.$store.dispatch('createMeetup', meetupData)
         this.$router.push('/meetups')

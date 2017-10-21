@@ -59,12 +59,14 @@ export const store = new Vuex.Store({
             meetups.push({
               id: key,
               campaignName: obj[key].campaignName,
-              description: obj[key].description,
+              quantity: obj[key].quantity,
               imageUrl: obj[key].imageUrl,
-              date: obj[key].date,
-              creatorId: obj[key].creatorId
+              // date: obj[key].date,
+              creatorId: obj[key].creatorId,
+              radius: obj[key].radius
             })
           }
+          debugger
           commit('setLoadedMeetups', meetups)
           commit('setLoading', false)
         })
@@ -79,8 +81,9 @@ export const store = new Vuex.Store({
       const meetup = {
         campaignName: payload.campaignName,
         campaignType: payload.campaignType,
-        description: payload.description,
-        date: payload.date.toISOString(),
+        quantity: payload.quantity,
+        radius: payload.radius,
+        // date: payload.date.toISOString(),
         creatorId: getters.user.id
       }
       let imageUrl

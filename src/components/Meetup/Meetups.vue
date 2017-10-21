@@ -14,8 +14,11 @@
               <v-flex xs7 sm8 md9>
                 <v-card-title primary-title>
                   <div>
-                    <h5 class="white--text mb-0">{{ meetup.campaignName }}</h5>
-                    <div>{{ meetup.date | date }}</div>
+                    <h3 class="white--text mb-0">{{ meetup.campaignName }}</h3>
+                    <!-- <div>Created: {{ meetup.date | date }}</div> -->
+                    <div>Balance: {{ meetup.quantity }}</div>
+                    <div>Already Showed: 5</div>
+                    <div>Radius: {{ meetup.radius }}</div>
                   </div>
                 </v-card-title>
                 <v-card-actions>
