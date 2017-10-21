@@ -21,11 +21,11 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-      apiKey: 'AIzaSyDTPnWFrygU7x5W_BVXL8jMLdi-1bzo6ic',
-      authDomain: 'devmeetup-516bc.firebaseapp.com',
-      databaseURL: 'https://devmeetup-516bc.firebaseio.com',
-      projectId: 'devmeetup-516bc',
-      storageBucket: ''
+      apiKey: 'AIzaSyCIHjfMhTEOBABst1eAnzqWpUEfOcV0bag',
+      authDomain: 'loocads-9db28.firebaseapp.com',
+      databaseURL: 'https://loocads-9db28.firebaseio.com',
+      projectId: 'loocads-9db28',
+      storageBucket: 'gs://loocads-9db28.appspot.com'
     })
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
