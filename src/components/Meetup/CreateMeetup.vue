@@ -72,13 +72,25 @@
           <v-layout row>
 
           <v-flex xs12 sm6 offset-sm3>
-          <span>Location:</span>
+          <span>Location: </span>
            <gmap-map
             :center="{lat:10, lng:10}"
             :zoom="7"
+            @rightclick="mapRclicked"
             map-type-id="terrain"
-            style="width: 500px; height: 300px"
-          >
+            style="width: 500px; height: 300px">
+            <gmap-marker 
+            :key="index"
+            v-if="m.enabled"
+            :position.sync="m.position"
+            :opacity="m.opacity"
+            :draggable.sync="m.draggable"
+            @click="m.clicked++"
+            @rightclick="m.rightClicked++"
+            @dragend="m.dragended++"
+            v-for="(m, index) in markers"
+            >
+            </gmap-marker>
           </gmap-map>
               
           </v-flex>
@@ -127,7 +139,21 @@
         // date: new Date(),
         // time: new Date(),
         image: null,
-        radius: 0
+        radius: 0,
+        markers: []
+      }
+    },
+    filters: {
+      markerRemover (markers) {
+        if (this.markersEven) {
+          const result = []
+          for (var i = 0; i < markers.length; i += 2) {
+            result.push(markers[i])
+          }
+          return result
+        } else {
+          return markers
+        }
       }
     },
     computed: {
@@ -186,8 +212,27 @@
         })
         fileReader.readAsDataURL(files[0])
         this.image = files[0]
+      },
+      mapRclicked (mouseArgs) {
+        const createdMarker = this.addMarker()
+        createdMarker.position.lat = mouseArgs.latLng.lat()
+        createdMarker.position.lng = mouseArgs.latLng.lng()
+        console.log(createdMarker.position.lat)
+      },
+      addMarker: function addMarker () {
+        this.markers.push({
+          position: { lat: 48.8538302, lng: 2.2982161 },
+          opacity: 1,
+          draggable: true,
+          enabled: true,
+          clicked: 0,
+          rightClicked: 0,
+          dragended: 0,
+          ifw: true,
+          ifw2text: 'This text is bad please change me :( '
+        })
+        return this.markers[this.markers.length - 1]
       }
     }
   }
 </script>
-
