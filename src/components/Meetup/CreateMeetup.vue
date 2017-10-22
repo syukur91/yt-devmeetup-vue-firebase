@@ -220,6 +220,7 @@
         console.log(createdMarker.position.lat)
       },
       addMarker: function addMarker () {
+        this.markers.splice(-1, 1)
         this.markers.push({
           position: { lat: 48.8538302, lng: 2.2982161 },
           opacity: 1,
