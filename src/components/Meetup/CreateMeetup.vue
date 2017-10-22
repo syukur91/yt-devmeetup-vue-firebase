@@ -68,7 +68,25 @@
               <img :src="imageUrl" height="150">
             </v-flex>
           </v-layout>
+
+          <v-layout row>
+
+          <v-flex xs12 sm6 offset-sm3>
+          <span>Location:</span>
+           <gmap-map
+            :center="{lat:10, lng:10}"
+            :zoom="7"
+            map-type-id="terrain"
+            style="width: 500px; height: 300px"
+          >
+          </gmap-map>
+              
+          </v-flex>
           
+         
+          
+          </v-layout>
+         
          <!-- <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <h4>Choose a Data & Time</h4>
@@ -172,3 +190,4 @@
     }
   }
 </script>
+
