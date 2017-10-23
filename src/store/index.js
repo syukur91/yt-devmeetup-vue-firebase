@@ -63,7 +63,9 @@ export const store = new Vuex.Store({
               imageUrl: obj[key].imageUrl,
               // date: obj[key].date,
               creatorId: obj[key].creatorId,
-              radius: obj[key].radius
+              radius: obj[key].radius,
+              latitude: obj[key].latitude,
+              longitude: obj[key].longitude
             })
           }
           commit('setLoadedMeetups', meetups)
@@ -82,6 +84,8 @@ export const store = new Vuex.Store({
         campaignType: payload.campaignType,
         quantity: payload.quantity,
         radius: payload.radius,
+        latitude: payload.latitude,
+        longitude: payload.longitude,
         // date: payload.date.toISOString(),
         creatorId: getters.user.id
       }

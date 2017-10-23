@@ -19,6 +19,8 @@
                     <div>Balance: {{ meetup.quantity }}</div>
                     <div>Already Showed: 5</div>
                     <div>Radius: {{ meetup.radius }}</div>
+                    <div>Latitude: {{ meetup.latitude }} </div>
+                    <div>Longitude: {{ meetup.longitude }} </div>
                   </div>
                 </v-card-title>
                 <v-card-actions>

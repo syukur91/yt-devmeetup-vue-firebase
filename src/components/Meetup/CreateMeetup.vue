@@ -119,7 +119,7 @@
               <v-btn
                 class="primary"
                 :disabled="!formIsValid"
-                type="submit">Create Meetup</v-btn>
+                type="submit">Create Ads</v-btn>
             </v-flex>
           </v-layout>
         </form>
@@ -140,7 +140,9 @@
         // time: new Date(),
         image: null,
         radius: 0,
-        markers: []
+        markers: [],
+        latitude: '',
+        longitude: ''
       }
     },
     filters: {
@@ -192,7 +194,9 @@
           image: this.image,
           quantity: this.quantity,
           // date: this.submittableDateTime,
-          radius: this.radius
+          radius: this.radius,
+          latitude: this.latitude,
+          longitude: this.longitude
         }
         this.$store.dispatch('createMeetup', meetupData)
         this.$router.push('/meetups')
@@ -217,6 +221,8 @@
         const createdMarker = this.addMarker()
         createdMarker.position.lat = mouseArgs.latLng.lat()
         createdMarker.position.lng = mouseArgs.latLng.lng()
+        this.latitude = createdMarker.position.lat
+        this.longitude = createdMarker.position.lng
         console.log(createdMarker.position.lat)
       },
       addMarker: function addMarker () {
