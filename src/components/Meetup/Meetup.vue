@@ -11,8 +11,13 @@
             height="400px"
           ></v-card-media>
           <v-card-text>
-            <div class="info--text">{{ meetup.date | date }} - {{ meetup.campaignType }}</div>
-            <div>{{ meetup.description }}</div>
+            <!-- <div class="info--text">{{ meetup.date | date }} - {{ meetup.campaignType }}</div> -->
+            <div class="black--text">Balance: {{ meetup.quantity }}</div>
+            <div class="black--text">Already Showed: 5</div>
+            <div class="black--text">Radius: {{ meetup.radius }}</div>
+            <div class="black--text">Latitude: {{ meetup.latitude }} </div>
+            <div class="black--text">Longitude: {{ meetup.longitude }} </div>
+            <!-- <div>{{ meetup.description }}</div> -->
           </v-card-text>
         </v-card>
       </v-flex>
@@ -25,7 +30,8 @@
     props: ['id'],
     computed: {
       meetup () {
-        return this.$store.getters.loadedMeetup(this.id)
+        var item = this.$store.getters.loadedMeetup(this.id)
+        return item
       }
     }
   }

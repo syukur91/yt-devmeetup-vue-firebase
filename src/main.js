@@ -18,6 +18,7 @@ Vue.use(VueGoogleMaps, {
 })
 
 Vue.use(Vuetify)
+
 Vue.config.productionTip = false
 
 Vue.filter('date', DateFilter)

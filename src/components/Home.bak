@@ -1,11 +1,16 @@
 <template>
   <v-container>
    
-   <v-layout >
+   <v-layout>
     <v-flex xs7 >
-      <v-card class="grey darken-1 white--text">
+      <v-card class="grey grey ligthen-5 white--text">
         
- 
+    <v-container fluid grid-list-lg>
+
+        <v-flex xs5>
+                    <v-card-media src="/static/logo.png" height="125px" contain></v-card-media>
+        </v-flex>
+    </v-container>
 
           <v-card-title primary-title>
             <div>
@@ -14,16 +19,14 @@
               </v-card-title> -->
               
               <v-card-media src="/static/logo.png" height="125px" contain></v-card-media>
-              <div class="white--text title-home">Loocads is looking for investors</div>
-              </br>
-              <div class="justified">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</div>
-            </div>
-            
-            </br>
+              <div class="white--text">Loocads is looking for investors</div>
 
-            <v-flex xs10 offset-xs4>
-              <v-btn color="primary" value="justify">Contact Us</v-btn>
-            </v-flex>
+              </br>
+              <div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</div>
+            </div>
+            <div>
+                <v-btn color="primary">Contact Us</v-btn>
+              </div>
           </v-card-title>
       </v-card>
     </v-flex>
