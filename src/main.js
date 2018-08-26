@@ -7,6 +7,7 @@ import { store } from './store'
 import DateFilter from './filters/date'
 import AlertCmp from './components/Shared/Alert.vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDz3i6w1h0YI9y4KxnYxmT_sqLSqs0GAB8',
@@ -23,7 +24,6 @@ Vue.config.productionTip = false
 
 Vue.filter('date', DateFilter)
 Vue.component('app-alert', AlertCmp)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
