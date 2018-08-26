@@ -228,7 +228,9 @@
       addMarker: function addMarker () {
         this.markers.splice(-1, 1)
         this.markers.push({
-          position: { lat: 48.8538302, lng: 2.2982161 },
+          // position: { lat: 48.8538302, lng: 2.2982161 },
+          position: { lat: 106.8278466, lng:-6.2153027 },
+          
           opacity: 1,
           draggable: true,
           enabled: true,
